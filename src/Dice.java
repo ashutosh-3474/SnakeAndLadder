@@ -1,0 +1,7 @@
+public class Dice {
+    //function to roll dice
+    public int roll()
+    {
+        return (int)(Math.random() * 6) + 1;
+    }
+}
