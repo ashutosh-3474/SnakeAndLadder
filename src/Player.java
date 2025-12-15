@@ -15,6 +15,8 @@ public class Player {
 
     public void move(int steps)
     {
+        //store the previous position to use later
+        int previousPosition = currentPosition;
         //use random method to get one out of possible move (no play, ladder, snake)
         int moveOption = (int)(Math.random()*3);
 
@@ -36,6 +38,9 @@ public class Player {
 
         //update the position to 0, if it goes negative
         if (currentPosition < 0) currentPosition = 0;
+
+        //update positon to previous position if it goes beyond 100 to meet exact win condition
+        if (currentPosition > 100) currentPosition = previousPosition;
 
         System.out.println("Current updated position of the player is " + currentPosition);
     }
