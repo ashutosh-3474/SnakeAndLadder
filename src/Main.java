@@ -9,9 +9,12 @@ public class Main {
         //instance of dice class
         Dice dice = new Dice();
 
+        int steps = dice.roll();
+
         //print statements
         System.out.println("Player's current position " + player.getCurrentPosition());
-        System.out.println("Dice rolled: " + dice.roll());
+        System.out.println("Dice rolled: " + steps);
+        player.move(steps);
 
     }
 }
