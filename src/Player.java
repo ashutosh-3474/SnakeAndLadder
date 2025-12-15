@@ -1,6 +1,9 @@
 public class Player {
     //current position of the player during game
     private  int currentPosition;
+    //to track total number of dice roll to reach win position
+    private  int totalNumberOfDiceRoll = 0;
+
 
     //constructor
     public Player() {
@@ -8,15 +11,23 @@ public class Player {
         this.currentPosition = 0;
     }
 
-    //getter for the current position
+    //getters
     public int getCurrentPosition() {
         return currentPosition;
     }
 
+    public int getTotalNumberOfDiceRoll() {
+        return totalNumberOfDiceRoll;
+    }
+
     public void move(int steps)
     {
+        //increment the number of dice roll
+        totalNumberOfDiceRoll++;
+
         //store the previous position to use later
         int previousPosition = currentPosition;
+
         //use random method to get one out of possible move (no play, ladder, snake)
         int moveOption = (int)(Math.random()*3);
 

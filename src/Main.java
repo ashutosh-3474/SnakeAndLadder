@@ -24,5 +24,7 @@ public class Main {
             player.move(step);
         }
 
+        System.out.println("Total dice roll made to reach win position is " + player.getTotalNumberOfDiceRoll());
+
     }
 }
