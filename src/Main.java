@@ -9,12 +9,20 @@ public class Main {
         //instance of dice class
         Dice dice = new Dice();
 
-        int steps = dice.roll();
 
         //print statements
         System.out.println("Player's current position " + player.getCurrentPosition());
-        System.out.println("Dice rolled: " + steps);
-        player.move(steps);
+
+        //loop to make move till player reached to 100
+        while (player.getCurrentPosition() < 100)
+        {
+            //roll dice to get number of steps
+            int step = dice.roll();
+            System.out.println("step" + step);
+
+            //make move
+            player.move(step);
+        }
 
     }
 }
